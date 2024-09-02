@@ -17,5 +17,10 @@ namespace CRUD_Using_Repository.Controllers
             var data = await userRepository.GetUsers();
             return View(data);
         }
+
+        public async Task<IActionResult> AddUser()
+        {
+            return View();
+        }
     }
 }
