@@ -1,4 +1,6 @@
 using CRUD_Using_Repository;
+using CRUD_Using_Repository.Repository.Interface;
+using CRUD_Using_Repository.Repository.service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<iUser, UserService>();
 
 var app = builder.Build();
 

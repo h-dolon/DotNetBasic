@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CRUD_Using_Repository.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUD_Using_Repository
 {
@@ -8,5 +9,6 @@ namespace CRUD_Using_Repository
         {
             
         }
+        public DbSet<User>Users { get; set; }
     }
 }
